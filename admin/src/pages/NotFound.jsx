@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom'
 const NotFound = () => {
   const navigate = useNavigate()
   return (
-    <div className="min-h-screen bg-neutralSurface-50 flex flex-col items-center justify-center gap-6 px-4">
-      <div className="bg-white rounded-2xl border border-neutralSurface-200 shadow-sm flex flex-col items-center gap-4 px-12 py-14">
+    <div className="min-h-screen bg-neutralSurface-50 dark:bg-slate-900 flex flex-col items-center justify-center gap-6 px-4">
+      <div className="bg-white dark:bg-slate-800 rounded-2xl border border-neutralSurface-200 dark:border-slate-700 shadow-sm flex flex-col items-center gap-4 px-12 py-14">
         <h1 className="text-7xl font-bold text-teal-600">404</h1>
-        <p className="text-tertiary-500 text-lg text-center">
+        <p className="text-tertiary-500 dark:text-slate-400 text-lg text-center">
           The page you are looking for does not exist.
         </p>
         <button
