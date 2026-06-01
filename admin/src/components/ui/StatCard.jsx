@@ -11,9 +11,9 @@ const StatCard = ({ title, value, subtitle, icon: Icon, color = 'blue', loading,
 
   if (loading) {
     return (
-      <div className="bg-white rounded-2xl p-5 border border-neutralSurface-100 shadow-sm animate-pulse">
-        <div className="h-4 bg-neutralSurface-100 rounded w-20 mb-3" />
-        <div className="h-8 bg-neutralSurface-100 rounded w-28" />
+      <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 border border-neutralSurface-100 dark:border-slate-700/50 shadow-sm animate-pulse">
+        <div className="h-4 bg-neutralSurface-100 dark:bg-slate-700 rounded w-20 mb-3" />
+        <div className="h-8 bg-neutralSurface-100 dark:bg-slate-700 rounded w-28" />
       </div>
     )
   }
@@ -21,11 +21,11 @@ const StatCard = ({ title, value, subtitle, icon: Icon, color = 'blue', loading,
   // Large Dashboard Cards
   if (!isSmall) {
     return (
-      <div className="bg-white rounded-2xl p-5 border border-neutralSurface-100 shadow-sm transition-all duration-300 hover:shadow-md">
+      <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 border border-neutralSurface-100 dark:border-slate-700/50 shadow-sm dark:shadow-black/20 transition-all duration-300 hover:shadow-md dark:hover:shadow-black/40">
         <div className="flex items-start justify-between mb-2">
           <div>
-            <p className="text-tertiary-400 text-sm font-bold tracking-wide mb-1 uppercase">{title}</p>
-            <p className="text-3xl sm:text-4xl font-black text-tertiary-900 tracking-tight">{value}</p>
+            <p className="text-tertiary-400 dark:text-slate-500 text-sm font-bold tracking-wide mb-1 uppercase">{title}</p>
+            <p className="text-3xl sm:text-4xl font-black text-tertiary-900 dark:text-slate-100 tracking-tight">{value}</p>
           </div>
           <div className={`w-11 h-11 ${c.bg} rounded-xl flex items-center justify-center flex-shrink-0`}>
             <Icon size={22} className={c.text} />
@@ -42,13 +42,13 @@ const StatCard = ({ title, value, subtitle, icon: Icon, color = 'blue', loading,
 
   // Mini Side Cards
   return (
-    <div className="bg-white rounded-xl p-4 border border-neutralSurface-100 shadow-sm flex items-center gap-3.5 transition-all hover:shadow-md">
+    <div className="bg-white dark:bg-slate-800 rounded-xl p-4 border border-neutralSurface-100 dark:border-slate-700/50 shadow-sm dark:shadow-black/20 flex items-center gap-3.5 transition-all hover:shadow-md dark:hover:shadow-black/40">
       <div className={`w-10 h-10 ${c.bg} rounded-xl flex items-center justify-center flex-shrink-0`}>
         <Icon size={18} className={c.text} />
       </div>
       <div>
-        <p className="text-tertiary-400 text-xs font-bold uppercase tracking-wider">{title}</p>
-        <p className="text-base sm:text-lg font-black text-tertiary-900 mt-0.5">{value}</p>
+        <p className="text-tertiary-400 dark:text-slate-500 text-xs font-bold uppercase tracking-wider">{title}</p>
+        <p className="text-base sm:text-lg font-black text-tertiary-900 dark:text-slate-100 mt-0.5">{value}</p>
       </div>
     </div>
   )

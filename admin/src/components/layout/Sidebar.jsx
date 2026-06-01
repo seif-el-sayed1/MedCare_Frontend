@@ -62,16 +62,16 @@ const Sidebar = () => {
 
   return (
     <div 
-      className={`sticky top-0 h-screen bg-white border-e border-neutralSurface-200 flex flex-col justify-between transition-all duration-300 flex-shrink-0 z-30 shadow-sm
+      className={`sticky top-0 h-screen bg-white dark:bg-slate-800 border-e border-neutralSurface-200 dark:border-slate-700 flex flex-col justify-between transition-all duration-300 flex-shrink-0 z-30 shadow-sm dark:shadow-black/20
         ${collapsed ? 'w-20' : 'w-64'}`}
     >
       {/* Brand Header */}
-      <div className={`h-16 flex items-center border-b border-neutralSurface-200 px-4 ${collapsed ? 'justify-center' : 'gap-3'}`}>
+      <div className={`h-16 flex items-center border-b border-neutralSurface-200 dark:border-slate-700 px-4 ${collapsed ? 'justify-center' : 'gap-3'}`}>
         <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-teal-600 to-sky-600 flex items-center justify-center shadow-md shadow-teal-600/20 flex-shrink-0">
           <ScanLine size={20} className="text-white" />
         </div>
         {!collapsed && (
-          <span className="font-black text-2xl text-tertiary-900 tracking-tight block">
+          <span className="font-black text-2xl text-tertiary-900 dark:text-slate-100 tracking-tight block">
             MedCare
           </span>
         )}
@@ -86,8 +86,8 @@ const Sidebar = () => {
             className={({ isActive }) => `
               flex items-center gap-4 px-4 py-3.5 rounded-xl text-base font-black transition-all duration-200 group
               ${isActive 
-                ? 'bg-gradient-to-r from-teal-600 to-sky-600 text-white shadow-md shadow-teal-600/20' 
-                : 'text-tertiary-600 hover:bg-neutralSurface-100 hover:text-teal-600'}
+              ? 'bg-gradient-to-r from-teal-600 to-sky-600 text-white shadow-md shadow-teal-600/20' 
+              : 'text-tertiary-600 dark:text-slate-400 hover:bg-neutralSurface-100 dark:hover:bg-slate-700/50 hover:text-teal-600 dark:hover:text-teal-400'}
               ${collapsed ? 'justify-center' : ''}
             `}
           >
@@ -98,13 +98,13 @@ const Sidebar = () => {
       </nav>
 
       {/* Admin Info + Profile + Logout */}
-      <div className="border-t border-neutralSurface-200 p-3 space-y-1 bg-neutralSurface-50/50">
+      <div className="border-t border-neutralSurface-200 dark:border-slate-700 p-3 space-y-1 bg-neutralSurface-50/50 dark:bg-slate-800/50">
         {!collapsed && admin && (
-          <div className="px-4 py-3 mb-1 bg-white rounded-xl border border-neutralSurface-200 shadow-sm">
-            <p className="text-tertiary-900 text-sm font-black truncate">
+          <div className="px-4 py-3 mb-1 bg-white dark:bg-slate-700 rounded-xl border border-neutralSurface-200 dark:border-slate-600 shadow-sm">
+            <p className="text-tertiary-900 dark:text-slate-100 text-sm font-black truncate">
               {admin.firstName} {admin.lastName}
             </p>
-            <p className="text-tertiary-500 text-xs font-bold truncate mt-0.5">{admin.email}</p>
+            <p className="text-tertiary-500 dark:text-slate-400 text-xs font-bold truncate mt-0.5">{admin.email}</p>
           </div>
         )}
         <NavLink
@@ -113,7 +113,7 @@ const Sidebar = () => {
             flex items-center gap-4 w-full px-4 py-3.5 rounded-xl text-base font-black transition-all duration-200
             ${isActive
               ? 'bg-gradient-to-r from-teal-600 to-sky-600 text-white shadow-md shadow-teal-600/20'
-              : 'text-tertiary-600 hover:bg-neutralSurface-100 hover:text-teal-600'}
+              : 'text-tertiary-600 dark:text-slate-400 hover:bg-neutralSurface-100 dark:hover:bg-slate-700/50 hover:text-teal-600 dark:hover:text-teal-400'}
             ${collapsed ? 'justify-center' : ''}
           `}
         >
@@ -122,7 +122,7 @@ const Sidebar = () => {
         </NavLink>
         <button
           onClick={handleLogout}
-          className={`flex items-center gap-4 w-full px-4 py-3.5 rounded-xl text-base font-black text-red-500 hover:bg-red-50 transition-all duration-200 ${collapsed ? 'justify-center' : ''}`}
+          className={`flex items-center gap-4 w-full px-4 py-3.5 rounded-xl text-base font-black text-red-500 hover:bg-red-50 dark:hover:bg-red-950/30 transition-all duration-200 ${collapsed ? 'justify-center' : ''}`}
         >
           <LogOut size={22} className="flex-shrink-0" />
           {!collapsed && <span>{lang === 'ar' ? 'تسجيل الخروج' : 'Logout'}</span>}
@@ -131,7 +131,7 @@ const Sidebar = () => {
 
       <button
         onClick={() => setCollapsed((p) => !p)}
-        className={`absolute top-1/2 -translate-y-1/2 bg-white border border-neutralSurface-200 text-tertiary-600 hover:text-teal-600 hover:border-teal-500 rounded-full p-2 transition-all z-40 shadow-md
+        className={`absolute top-1/2 -translate-y-1/2 bg-white dark:bg-slate-700 border border-neutralSurface-200 dark:border-slate-600 text-tertiary-600 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 hover:border-teal-500 rounded-full p-2 transition-all z-40 shadow-md
           ${isRTL ? '-start-4' : '-end-4'}`}
       >
         {collapsed ? (

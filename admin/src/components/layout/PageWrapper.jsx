@@ -6,7 +6,7 @@ const PageWrapper = ({ children, title }) => {
   const { isRTL } = useLanguage()
 
   return (
-    <div className="flex min-h-screen bg-slate-50" dir={isRTL ? 'rtl' : 'ltr'}>
+    <div className="flex min-h-screen bg-slate-50 dark:bg-slate-900" dir={isRTL ? 'rtl' : 'ltr'}>
       <Sidebar />
       <div className="flex flex-col flex-1 overflow-hidden">
         <Topbar title={title} />
