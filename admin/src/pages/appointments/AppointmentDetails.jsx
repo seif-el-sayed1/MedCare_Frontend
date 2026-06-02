@@ -111,8 +111,12 @@ const AppointmentDetails = () => {
                   disabled={updatingStatus}
                   className="border border-neutralSurface-200 dark:border-slate-600 rounded-xl px-3 py-2 text-sm text-tertiary-900 dark:text-slate-100 focus:outline-none focus:border-teal-600 bg-white dark:bg-slate-700/50 disabled:opacity-60 transition"
                 >
-                  {Object.entries(APPOINTMENT_STATUS).map(([key, val]) => (
-                    <option key={key} value={key}>{val[lang]}</option>
+                  {Object.entries(APPOINTMENT_STATUS)
+                    .filter(([key]) => key !== 'PENDING')
+                    .map(([key, val]) => (
+                      <option key={key} value={key}>
+                        {val[lang]}
+                      </option>
                   ))}
                 </select>
               </div>
