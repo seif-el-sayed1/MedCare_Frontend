@@ -18,11 +18,6 @@ const Topbar = ({ title }) => {
 
   return (
     <>
-      <div style={{ position: 'fixed', bottom: 0, left: 0, padding: '4px 10px', fontSize: 12, zIndex: 9999, background: isDark ? '#1e293b' : '#fff', color: isDark ? '#fff' : '#000', borderTop: '2px solid teal', display: 'flex', gap: 8 }}>
-        <span>zustand: <b>{isDark ? 'DARK' : 'LIGHT'}</b></span>
-        <span>|</span>
-        <span>html class: <b id="debug-html-class">?</b></span>
-      </div>
     <header className="h-16 bg-white dark:bg-slate-800 border-b border-neutralSurface-200 dark:border-slate-700 flex items-center justify-between px-6 flex-shrink-0 sticky top-0 z-20">
       {/* Title */}
       <div className="flex items-center">
