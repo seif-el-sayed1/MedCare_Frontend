@@ -1,5 +1,5 @@
 import Sidebar from './Sidebar.jsx'
-import Topbar from './Topbar.jsx'
+import Topbar from './TopBar.jsx'
 import BottomNav from './BottomNav.jsx'
 import useLanguage from '../../hooks/useLanguage.js'
 
